@@ -1,3 +1,16 @@
+## Student Information
+
+| Details | Information |
+|---|---|
+| **Name** | Sakshi Kumari |
+| **Registration Number** | 23FE10CDS00381 |
+| **Branch** | B.Tech CSE – Data Science |
+| **Semester** | 7th Semester |
+| **Section** | F |
+| **Batch** | 2027 |
+| **GitHub Username** | [SakshiKumari1802](https://github.com/SakshiKumari1802) |
+| **Project Title** | [Multi-PDF-QA-Chatbot-using-LLM-RAG] |
+| **Training Program** | [Capstone Project Guidelines & Submission Process NLP CWS] |        
 # Multi-PDF-QA-Chatbot-using-LLM-RAG
 A system designed to extract and search information from multiple PDF files using vector embeddings to retrieve relevant document context before generating accurate responses. The project demonstrates an end-to-end RAG pipeline with text extraction, chunking, vector storage, and LLM-based response generation using open-source tools.
 
