@@ -102,6 +102,88 @@ The system automatically tries multiple models for better reliability:
 
 ---
 
+## Installation Guide
+
+### Prerequisites
+
+- Python 3.9 – 3.11
+- pip (`python -m pip install --upgrade pip`)
+- Git
+- A free [Hugging Face account](https://huggingface.co/join) and access token
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/<your-username>/Multi-PDF-QA-Chatbot-using-LLM-RAG.git
+cd Multi-PDF-QA-Chatbot-using-LLM-RAG
+```
+
+### 2. Create a virtual environment
+
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# macOS / Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+If you don't have a `requirements.txt`, create one:
+
+```text
+streamlit
+langchain
+langchain-community
+PyPDF2
+sentence-transformers
+faiss-cpu
+huggingface_hub
+python-dotenv
+```
+
+### 4. Add your Hugging Face token
+
+1. Go to **Hugging Face → Settings → Access Tokens → New token** (Read access is enough).
+2. Create a `.env` file in the project root:
+
+```env
+HUGGINGFACEHUB_API_TOKEN=hf_your_token_here
+```
+
+> Never commit `.env`; add it to `.gitignore`.
+> Some models (e.g., LLaMA 2) are gated, so accept their license on the model page first.
+
+### 5. Run the application
+
+```bash
+streamlit run app.py
+```
+
+Open <http://localhost:8501> in your browser.
+
+### 6. Use it
+
+1. Upload one or more PDFs from the sidebar.
+2. Click **Process**.
+3. Ask questions in the chat box.
+
+### Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| `ModuleNotFoundError` | Activate the venv and re-run `pip install -r requirements.txt` |
+| 401 / 403 from Hugging Face | Check the token in `.env`; accept the model license if gated |
+| Model loading / 503 error | Free-tier cold start; wait a few seconds, the app falls back to the next model |
+| `faiss` install fails | Use `faiss-cpu` and Python ≤ 3.11 |
+
 ## ⭐ Final Note
 
 This project demonstrates a **practical, real-world implementation of RAG** using:
